@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "marviz"
+version = "0.1.0"
+description = "Terminal AI Development Environment"
+requires-python = ">=3.11"
+dependencies = [
+    "textual[syntax]>=1.0.0",
+    "litellm>=1.40.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["textual-dev>=1.0.0", "pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+marviz = "marviz.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/marviz"]

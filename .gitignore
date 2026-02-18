@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.env
+.venv/
+venv/
+*.swp
+*.swo
+.DS_Store
+screenshot.svg
+.claude
