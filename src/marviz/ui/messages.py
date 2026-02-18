@@ -21,6 +21,8 @@ class SubAgentSpawned(Message):
 class SubAgentCompleted(Message):
     """A sub-agent finished its task."""
 
-    def __init__(self, agent_id: str) -> None:
+    def __init__(self, agent_id: str, tool_call_id: str, result: str) -> None:
         super().__init__()
         self.agent_id = agent_id
+        self.tool_call_id = tool_call_id
+        self.result = result

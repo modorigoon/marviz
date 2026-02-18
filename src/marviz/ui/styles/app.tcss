@@ -30,17 +30,33 @@ ChatPanel RichLog {
     scrollbar-size: 1 1;
 }
 
-ChatPanel Input {
-    dock: bottom;
+ChatPanel #chat-streaming {
+    height: auto;
+    max-height: 50%;
     background: #000080;
-    color: #ffffff;
-    border: none;
-    height: 1;
+    color: #aaaaaa;
     padding: 0;
 }
 
-ChatPanel Input:focus {
-    border: none;
+ChatInput {
+    dock: bottom;
+    background: #000060;
+    color: #ffffff;
+    border-top: solid #00aaaa;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    height: auto;
+    max-height: 6;
+    min-height: 1;
+    padding: 0;
+}
+
+ChatInput:focus {
+    border-top: solid #55ffff;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
 }
 
 /* ── Center: Sub-Agents ── */
@@ -56,11 +72,25 @@ AgentPanel {
     background: #000080;
     color: #aaaaaa;
     border-bottom: solid #005555;
-    scrollbar-size: 1 1;
 }
 
 AgentPanel:last-of-type {
     border-bottom: none;
+}
+
+AgentPanel RichLog {
+    height: 1fr;
+    background: #000080;
+    color: #aaaaaa;
+    scrollbar-size: 1 1;
+}
+
+AgentPanel .agent-streaming {
+    height: auto;
+    max-height: 50%;
+    background: #000080;
+    color: #aaaaaa;
+    padding: 0;
 }
 
 /* ── Right column ── */
@@ -91,8 +121,6 @@ CodeEditorPanel {
 
 CodeEditorPanel TextArea {
     height: 1fr;
-    background: #000080;
-    color: #aaaaaa;
 }
 
 /* ── Bottom: Status + Terminal ── */
